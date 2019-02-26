@@ -1,0 +1,23 @@
+Matrix Factorization via Singular Value Decomposition
+
+Matrix factorization is the breaking down of one matrix into a product of multiple matrices. 
+It’s extremely well studied in mathematics, and it’s highly useful. 
+There are many different ways to factor matrices, but singular value decomposition is particularly 
+useful for making recommendations.
+
+So what is singular value decomposition (SVD)? At a high level, SVD is an algorithm that decomposes 
+a matrix R into the best lower rank (i.e. smaller/simpler) approximation of the original matrix R.
+
+Mathematically, it decomposes R into two unitary matrices and a diagonal matrix:
+
+			R = UEVt
+
+where R is user viewed number matrix, U is the user “features” matrix, E is the diagonal matrix of 
+singular values (essentially weights), and Vt is the wallpaper “features” matrix.
+
+
+Singular Value Decomposition
+Scipy and Numpy both have functions to do the singular value decomposition. 
+I’m going to use the Scipy function svds because it let’s me choose how many latent 
+factors I want to use to approximate the original ratings matrix (instead of having to 
+truncate it after).
